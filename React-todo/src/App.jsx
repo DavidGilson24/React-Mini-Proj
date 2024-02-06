@@ -2,19 +2,44 @@ import './style.css'
 import { useState } from "react"
 
 export default function App(){
-  const[count, setCount] = useState(0)
+  const [task, setTask] = useState([])
+  const [inputValue, setInputValue] = useState('');
 
+  const handleInputChange = (event) => setInputValue(event.target.value);
+
+  const addTask = () => {
+    setTask([...task, inputValue]);
+    setInputValue('');
+  }
+  
   return(
     <>
-      <h1> The counter button! </h1>
-      <div className='btn-style'>
-        <button 
-          type='button'
-          onClick={() => setCount(count + 1)} 
-          id='btn'
-          > Increase !</button>
-      </div>
-      <h1 id='counter'> {count} </h1>
+      <h1> The to-do list! </h1>
+
+      <form id = 'task-form' className='task-form'>
+        <input 
+          value={inputValue} 
+          onChange={handleInputChange} 
+          type = 'text' 
+          id = 'text-field'
+        />
+
+        <div className='btn-style'>
+          <button 
+            type='button' 
+            onClick={addTask}
+            id='btn'
+            > Add a task !</button>
+        </div>
+      </form> 
+
+      <ul>
+          {task.map((taskItem, index) => (
+            <li key={index}>{taskItem}</li>
+          ))}
+      </ul>
+
+      <h3 id='nothing'> Nothing here! </h3>
     </>
   )
 }
