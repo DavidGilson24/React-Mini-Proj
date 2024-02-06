@@ -1,0 +1,19 @@
+body{
+    background-color: darkslategrey;
+}
+
+h1{
+    color: aliceblue;
+    text-align: center;
+}
+
+.new-item-form{
+    display: flex;
+    color: aliceblue;
+}
+
+.btn-style{  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
