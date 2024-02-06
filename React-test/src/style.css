@@ -1,0 +1,17 @@
+body{
+    background-color: darkslategrey;
+}
+
+h1{
+    color: aliceblue;
+}
+
+.new-item-form{
+    display: flex;
+    color: aliceblue;
+}
+
+.btn
+{
+    margin-left: 50px;
+}
