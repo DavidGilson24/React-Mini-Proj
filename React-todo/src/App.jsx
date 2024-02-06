@@ -34,8 +34,8 @@ export default function App(){
       </form> 
 
       <ul>
-          {task.map((taskItem, index) => (
-            <li key={index}>{taskItem}</li>
+          {task.map((taskItem) => (
+            <li>{taskItem}</li>
           ))}
       </ul>
 
